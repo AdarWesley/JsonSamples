@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -8,8 +9,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
-public class Person {
+public abstract class Person {
 	private String _firstName;
+	private String _lastName;
+	private List<Vehicle> vehicles;
+	private ArrayList<Person> _children = new ArrayList<Person>();
+
 	public String get_firstName() {
 		return _firstName;
 	}
@@ -17,7 +22,6 @@ public class Person {
 		this._firstName = firstName;
 	}
 	
-	private String _lastName;
 	public String get_lastName() {
 		return _lastName;
 	}
@@ -25,7 +29,6 @@ public class Person {
 		this._lastName = lastName;
 	}
 	
-	private ArrayList<Person> _children = new ArrayList<Person>();
 	public ArrayList<Person> get_children() {
 		return _children;
 	}
@@ -42,12 +45,13 @@ public class Person {
 	}
 	
 	@JsonIgnore
-	private Gender _gender;
-	@JsonIgnore
-	public Gender get_Gender(){
-		return _gender;
+	public abstract Gender get_Gender();
+	
+	public void setVehicles(List<Vehicle> vehicles) {
+		this.vehicles = vehicles;
 	}
-	public void set_gender(Gender gender) {
-		this._gender = gender;
+	
+	public List<Vehicle> getVehicles() {
+		return vehicles;
 	}
 }

@@ -7,6 +7,10 @@ public class FemalePerson extends Person {
 
 	public FemalePerson(String firstName, String lastName) {
 		super(firstName, lastName);
-		set_gender(Gender.Female);
+	}
+
+	@Override
+	public Gender get_Gender() {
+		return Gender.Female;
 	}
 }
