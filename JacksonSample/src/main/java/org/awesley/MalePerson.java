@@ -1,3 +1,5 @@
+package org.awesley;
+
 public class MalePerson extends Person {
 
 	public MalePerson() {
