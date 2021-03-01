@@ -1,6 +1,6 @@
 package org.awesley;
 
-public class Bicycle extends Vehicle {
+public class Bicycle implements Vehicle {
 	private String color;
 	
 	public Bicycle() {

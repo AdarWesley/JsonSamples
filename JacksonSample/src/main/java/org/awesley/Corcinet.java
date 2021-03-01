@@ -1,6 +1,6 @@
 package org.awesley;
 
-public class Corcinet extends Vehicle {
+public class Corcinet implements Vehicle {
 
 	private String color;
 	

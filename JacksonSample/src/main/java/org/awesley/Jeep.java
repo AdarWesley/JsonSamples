@@ -1,6 +1,6 @@
 package org.awesley;
 
-public class Jeep extends Vehicle {
+public class Jeep implements Vehicle {
 	private int engineSize;
 	private String color;
 	

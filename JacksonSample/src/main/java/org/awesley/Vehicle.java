@@ -1,5 +1,5 @@
 package org.awesley;
 
-public class Vehicle {
+public interface Vehicle {
 
 }
